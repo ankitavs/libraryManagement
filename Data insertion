@@ -1,0 +1,20 @@
+ Insert data into Books table
+INSERT INTO Books (book_id, title, author, genre, publication_year)
+VALUES
+(1, 'To Kill a Mockingbird', 'Harper Lee', 'Fiction', 1960),
+(2, '1984', 'George Orwell', 'Dystopian', 1949),
+(3, 'Moby Dick', 'Herman Melville', 'Adventure', 1851);
+
+-- Insert data into Members table
+INSERT INTO Members (member_id, name, email, membership_date)
+VALUES
+(1, 'Alice Smith', 'alice@example.com', '2022-01-15'),
+(2, 'John Doe', 'john@example.com', '2022-02-10'),
+(3, 'Jane Roe', 'jane@example.com', '2022-03-05');
+
+-- Insert data into Loans table
+INSERT INTO Loans (loan_id, book_id, member_id, loan_date, return_date)
+VALUES
+(1, 1, 1, '2023-09-01', '2023-09-15'),
+(2, 2, 2, '2023-09-02', NULL),
+(3, 3, 1, '2023-09-03', NULL);
