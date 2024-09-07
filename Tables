@@ -1,0 +1,27 @@
+//Books Table
+CREATE TABLE Books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    author VARCHAR(100),
+    genre VARCHAR(50),
+    publication_year INT
+);
+
+//Members Table
+CREATE TABLE Members (
+    member_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    membership_date DATE
+);
+
+//Loans Table
+CREATE TABLE Loans (
+    loan_id INT PRIMARY KEY,
+    book_id INT,
+    member_id INT,
+    loan_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES Books(book_id),
+    FOREIGN KEY (member_id) REFERENCES Members(member_id)
+);
