@@ -1,0 +1,15 @@
+//Queries
+//Retrieve all books
+SELECT * FROM Books;
+//Retrieve books on loan
+SELECT Books.title, Members.name
+FROM Loans
+JOIN Books ON Loans.book_id = Books.book_id
+JOIN Members ON Loans.member_id = Members.member_id
+WHERE Loans.return_date IS NULL;
+//Retrieve books that are overdue
+SELECT Books.title, Members.name, Loans.loan_date
+FROM Loans
+JOIN Books ON Loans.book_id = Books.book_id
+JOIN Members ON Loans.member_id = Members.member_id
+WHERE Loans.return_date IS NULL AND Loans.loan_date < CURDATE() - INTERVAL 30 DAY;
